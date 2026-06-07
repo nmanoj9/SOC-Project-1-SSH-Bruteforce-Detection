@@ -319,18 +319,6 @@ Splunk visualization displaying brute-force detection activity.
 
 ---
 
-## Repository Structure
-
-```text
-SOC-Project-1-SSH-Bruteforce-Detection/
-│
-├── README.md
-├── project1_ssh_bruteforce_detection.pdf
-└── Screenshots/
-```
-
----
-
 ## Real-World Relevance
 
 This project demonstrates a common SOC use case used to identify brute-force attacks against SSH services. Security analysts frequently investigate authentication anomalies, detect account compromise attempts, build correlation-based detections, and respond to potential unauthorized access attempts.
