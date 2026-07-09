@@ -1,0 +1,6 @@
+index=main ("Failed password" OR "Accepted password")
+| rex "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| stats count(eval(searchmatch("Failed password"))) as Failed_Attempts,
+        count(eval(searchmatch("Accepted password"))) as Successful_Logins
+by src_ip
+| where Failed_Attempts > 5 AND Successful_Logins > 0
