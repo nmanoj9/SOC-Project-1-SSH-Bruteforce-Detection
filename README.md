@@ -17,6 +17,16 @@ This project demonstrates the detection and investigation of an SSH brute-force 
 * Investigate attacker behavior and persistence activity
 
 ---
+## Repository Structure
+
+This repository includes:
+
+- README.md – Project overview
+- Documentation/ – Detailed investigation notes
+- Queries/ – Splunk SPL searches used during the investigation
+- Screenshots/ – Investigation evidence and dashboard images
+
+---
 
 ## Lab Environment
 
@@ -157,7 +167,7 @@ ping <target_ip>
 
 ---
 
-## Attack Simulation Using Metasploit
+## SSH Brute Force Attack Simulation
 
 ### Launch Metasploit
 
@@ -192,7 +202,7 @@ run
 
 ---
 
-## Successful Login Simulation
+## Authentication Validation
 
 ### Configure Valid Credentials
 
@@ -223,7 +233,7 @@ run
 sudo tail -f /var/log/auth.log
 ```
 
-### Observed Events
+### Evidence Collected
 
 * Failed password attempts
 * Accepted password events
@@ -291,7 +301,7 @@ index=main "Accepted password"
 
 ## Detection Logic
 
-### SPL Query
+### Detection Search
 
 ```spl
 index=main ("Failed password" OR "Accepted password")
@@ -328,7 +338,7 @@ This query:
 * Trigger Condition: Number of Results > 0
 * Time Range: Last 15 Minutes
 
-### Purpose
+### Verification Objectives
 
 * Enable real-time brute-force detection
 * Generate automated alerts
@@ -336,7 +346,7 @@ This query:
 
 ---
 
-## Visualization
+## Detection Dashboard
 
 ### Dashboard Component
 
@@ -378,13 +388,15 @@ Bar Chart
 
 ## Screenshot References
 
-### Figure 1
+Figure 1
 
-Authentication Log showing failed and successful SSH login attempts.
+Authentication Log
+(Screenshots/01_attack_execution.png)
 
-### Figure 2
+Figure 2
 
-Splunk visualization displaying brute-force detection activity.
+Splunk Detection Dashboard
+(Screenshots/04_dashboard_visualization.png)
 
 ---
 
