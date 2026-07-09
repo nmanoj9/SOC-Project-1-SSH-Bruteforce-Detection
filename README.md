@@ -82,13 +82,55 @@ The lab consisted of a Kali Linux attacker machine and a Metasploitable 2 target
 
 ---
 
+---
+
+# Investigation Workflow
+
+The investigation followed a structured SOC workflow to identify, validate, and investigate SSH brute-force activity.
+
+```
+Kali Linux Attack
+        │
+        ▼
+SSH Authentication Logs
+ (/var/log/auth.log)
+        │
+        ▼
+Log Collection
+        │
+        ▼
+Splunk Log Ingestion
+        │
+        ▼
+Authentication Analysis
+(Failed + Successful Logins)
+        │
+        ▼
+Brute Force Detection
+        │
+        ▼
+Alert Generation
+        │
+        ▼
+MITRE ATT&CK Mapping
+        │
+        ▼
+SOC Investigation Findings
+```
+
+### Workflow Overview
+
+The simulated SSH brute-force attack generated authentication events that were collected from the Linux authentication log (`/var/log/auth.log`). These logs were ingested into Splunk Enterprise, where searches and correlation logic were used to identify repeated failed authentication attempts followed by a successful login. Detection rules, visualizations, and MITRE ATT&CK mapping were then used to document the investigation.
+
+---
+
 ## Log Sources
 
 ### Linux Authentication Logs
 
 * `/var/log/auth.log`
 
-### Events Observed
+### Evidence Collected
 
 * Failed Password Attempts
 * Successful SSH Logins
@@ -373,6 +415,8 @@ This project demonstrates practical SOC analyst skills by simulating a real-worl
 
 ---
 
-## Project Status
+# Project Status
 
-**Completed**
+**Status:** ✅ Completed
+
+This project has been successfully completed and demonstrates SSH brute-force detection, authentication log analysis, correlation-based detection, Splunk alert creation, and MITRE ATT&CK mapping in a controlled SOC lab environment.
