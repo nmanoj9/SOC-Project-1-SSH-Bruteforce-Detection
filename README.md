@@ -40,6 +40,48 @@ This project demonstrates the detection and investigation of an SSH brute-force 
 
 ---
 
+# Lab Architecture
+
+```
+                 +----------------------+
+                 |    Kali Linux        |
+                 | (Attacker Machine)   |
+                 +----------+-----------+
+                            |
+                     SSH Brute Force
+                            |
+                            v
+                 +----------------------+
+                 |   Metasploitable 2   |
+                 |    (SSH Server)      |
+                 +----------+-----------+
+                            |
+                     Authentication Logs
+                     (/var/log/auth.log)
+                            |
+                            v
+                 +----------------------+
+                 |  Splunk Enterprise   |
+                 |  Search & Reporting  |
+                 | Detection & Analysis |
+                 +----------+-----------+
+                            |
+                            v
+                 +----------------------+
+                 |   SOC Investigation  |
+                 | Detection Rule       |
+                 | Dashboard            |
+                 | MITRE ATT&CK         |
+                 +----------------------+
+```
+---
+
+### Architecture Overview
+
+The lab consisted of a Kali Linux attacker machine and a Metasploitable 2 target system running an SSH service. Authentication logs generated during the simulated brute-force attack were collected from the target and analyzed using Splunk Enterprise. Correlation searches, dashboards, and detection logic were used to identify repeated authentication failures and successful logins from the same source IP address.
+
+---
+
 ## Log Sources
 
 ### Linux Authentication Logs
