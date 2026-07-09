@@ -1,0 +1,8 @@
+# Created User
+index=main "useradd"
+
+# SSH Sessions
+index=main "session opened"
+
+# Authentication Summary
+index=main ("session opened" OR "useradd")
