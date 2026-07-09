@@ -1,0 +1,8 @@
+# Failed SSH Login Events
+index=main "Failed password"
+
+# Successful SSH Login Events
+index=main "Accepted password"
+
+# All SSH Authentication Events
+index=main ("Failed password" OR "Accepted password")
