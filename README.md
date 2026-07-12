@@ -427,8 +427,3 @@ This project demonstrates practical SOC analyst skills by simulating a real-worl
 
 ---
 
-# Project Status
-
-**Status:** ✅ Completed
-
-This project has been successfully completed and demonstrates SSH brute-force detection, authentication log analysis, correlation-based detection, Splunk alert creation, and MITRE ATT&CK mapping in a controlled SOC lab environment.
