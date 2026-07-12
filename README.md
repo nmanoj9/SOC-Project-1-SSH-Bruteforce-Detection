@@ -217,6 +217,8 @@ run
 * SSH session established
 * Authentication logs recorded successful access
 
+A successful SSH authentication was intentionally performed after the failed login attempts to generate both failed and successful authentication events for correlation analysis in Splunk.
+
 ---
 
 ## Log Monitoring
@@ -260,7 +262,7 @@ sudo adduser hackersuser
 
 ## Log Collection and Transfer
 
-Authentication logs were transferred to Splunk for analysis.
+After the attack simulation and authentication validation, the Linux authentication log (`/var/log/auth.log`) was securely transferred to the Splunk Enterprise instance for centralized log analysis and investigation.
 
 ### Command
 
